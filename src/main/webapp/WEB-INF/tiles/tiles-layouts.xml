@@ -11,8 +11,6 @@
         <put-attribute name="top" value="/WEB-INF/tiles/layout/main/pages/top.jsp"/>
         <put-attribute name="left" value="/WEB-INF/tiles/layout/main/pages/left.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/tiles/layout/main/pages/footer.jsp"/>
-        <put-attribute name="module" value="/WEB-INF/tiles/layout/main/pages/module.jsp"/>
-        <put-attribute name="bottom" value="/WEB-INF/tiles/layout/main/pages/bottom.jsp"/>
         <put-attribute name="content"/>
     </definition>
 
@@ -31,8 +29,6 @@
         <put-attribute name="header" value="/WEB-INF/tiles/layout/single-page/pages/header.jsp"/>
         <put-attribute name="top" value="/WEB-INF/tiles/layout/single-page/pages/top.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/tiles/layout/single-page/pages/footer.jsp"/>
-        <put-attribute name="module" value="/WEB-INF/tiles/layout/single-page/pages/module.jsp"/>
-        <put-attribute name="bottom" value="/WEB-INF/tiles/layout/single-page/pages/bottom.jsp"/>
         <put-attribute name="content"/>
     </definition>
 
