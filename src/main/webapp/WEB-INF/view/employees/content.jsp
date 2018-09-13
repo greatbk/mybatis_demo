@@ -1,5 +1,6 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <div class="rightcolumn">
     <div class="card">
@@ -8,7 +9,7 @@
         <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
     </div>
     <div class="card">
-        <h3>Popular Post</h3>
+        <h3><spring:message code="hello"/></h3>
         <div class="fakeimg"><p>Image</p></div>
         <div class="fakeimg"><p>Image</p></div>
         <div class="fakeimg"><p>Image</p></div>
