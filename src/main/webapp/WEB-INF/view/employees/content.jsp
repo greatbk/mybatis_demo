@@ -9,13 +9,13 @@
         <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
     </div>
     <div class="card">
-        <h3><spring:message code="hello"/></h3>
-        <div class="fakeimg"><p>Image</p></div>
+        <h3>Reference Multi Languages</h3>
+        <div class="fakeimg"><p><spring:message code="hello"/></p></div>
         <div class="fakeimg"><p>Image</p></div>
         <div class="fakeimg"><p>Image</p></div>
     </div>
     <div class="card">
-        <h3>Follow Me</h3>
-        <p>Some text..</p>
+        <h3>Reference XML Properties</h3>
+        <p><spring:eval expression="@application['CONTEXT_PATH']"> </spring:eval>
     </div>
 </div>

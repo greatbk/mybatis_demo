@@ -32,6 +32,6 @@
     </bean>
 
     <!-- use properties file -->
-    <util:properties id="config" location="/WEB-INF/properties/demo.xml"></util:properties>
+    <util:properties id="config" location="/WEB-INF/properties/application.xml"></util:properties>
 
 </beans>
