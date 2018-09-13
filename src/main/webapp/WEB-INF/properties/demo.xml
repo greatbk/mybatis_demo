@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+	<!-- Context Path -->
+	<entry key="CONTEXT_PATH">/</entry>
+
+	<!-- Resource Path -->
+	<entry key="RESOURCES_PATH">/resources</entry>
+
+</properties>
