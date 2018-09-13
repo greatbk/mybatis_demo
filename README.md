@@ -1,2 +1,2 @@
 # mybatis_demo
-Spring5 JPA example project
+Spring4 Mybatis example project
