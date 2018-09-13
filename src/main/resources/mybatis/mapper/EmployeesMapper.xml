@@ -3,16 +3,16 @@
 
 <mapper namespace="com.example.mybatis.demo.mapper.EmployeesMapper">
 
-    <!-- 사원 목록 - 리절트맵 -->
+    <!-- resultMap - employees list -->
     <resultMap id="employeesResultMap" type="com.example.mybatis.demo.entity.Employees">
         <result property="empNo" column="emp_no" jdbcType="INTEGER" />
         <result property="firstName" column="first_name" jdbcType="VARCHAR" />
         <result property="lastName" column="last_name" jdbcType="VARCHAR" />
     </resultMap>
 
-    <!-- 사원 목록 -->
+    <!-- employees list -->
     <select id="selectEmployeesList" parameterType="String" resultMap="employeesResultMap">
-        /* EmployeesMapper.selectNoticeList */
+        /* EmployeesMapper.selectEmployeesList */
         SELECT emp_no
              , first_name
              , last_name
