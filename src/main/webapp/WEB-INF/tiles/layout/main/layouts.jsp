@@ -3,22 +3,15 @@
 
 <!doctype html>
 <html lang="ko">
-
 <head>
     <tiles:insertAttribute name="header"/>
 </head>
-
 <body>
-<div class="wrapper">
+<tiles:insertAttribute name="top"/>
+<div class="row">
     <tiles:insertAttribute name="left"/>
-    <div class="main-panel">
-        <tiles:insertAttribute name="top"/>
-        <tiles:insertAttribute name="content"/>
-        <tiles:insertAttribute name="footer"/>
-    </div>
+    <tiles:insertAttribute name="content"/>
 </div>
-<tiles:insertAttribute name="module"/>
+<tiles:insertAttribute name="footer"/>
 </body>
-
-<tiles:insertAttribute name="bottom"/>
 </html>

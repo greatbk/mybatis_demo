@@ -3,17 +3,14 @@
 
 <!doctype html>
 <html lang="ko">
-
-<head>Demo</head>
-
+<head>
+    <tiles:insertAttribute name="header"/>
+</head>
 <body>
+<div id="jb-container">
     <tiles:insertAttribute name="top"/>
-    <div class="wrapper wrapper-full-page">
-            <tiles:insertAttribute name="content"/>
-            <tiles:insertAttribute name="footer"/>
-    </div>
-    <tiles:insertAttribute name="module"/>
+    <tiles:insertAttribute name="content"/>
+    <tiles:insertAttribute name="footer"/>
+</div>
 </body>
-
-<tiles:insertAttribute name="bottom"/>
 </html>

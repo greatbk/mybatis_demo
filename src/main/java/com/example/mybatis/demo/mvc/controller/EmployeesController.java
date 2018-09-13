@@ -25,13 +25,13 @@ public class EmployeesController {
 
     @GetMapping("/single")
     public String employeesSingle() {
-        loggerTest("employeesSingle");
+        loggerTest("employees-single");
         return "employees.single-page";
     }
 
     @GetMapping("/main")
     public String employeesMain() {
-        loggerTest("employeesMain");
+        loggerTest("employees-main");
         return "employees.main";
     }
 

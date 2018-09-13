@@ -7,34 +7,42 @@
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <meta name="viewport" content="width=device-width" />
 
-<%--
-<!-- Core JS Files -->
-<script src="<minuet:contextWithResources/>/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-<script src="<minuet:contextWithResources/>/js/jquery-ui.min.js" type="text/javascript"></script>
-<script src="<minuet:contextWithResources/>/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<minuet:contextWithResources/>/js/material.min.js" type="text/javascript"></script>
-<script src="<minuet:contextWithResources/>/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+<!-- core js files -->
+<script src="/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js" type="text/javascript"></script>
 
-<!-- Bootstrap core CSS -->
-<link href="<minuet:contextWithResources/>/css/bootstrap.min.css" rel="stylesheet" />
-<!-- Material Dashboard CSS -->
-<link href="<minuet:contextWithResources/>/css/material-dashboard.css" rel="stylesheet" />
-<!-- CSS for Minuet -->
-<link href="<minuet:contextWithResources/>/css/minuet.css" rel="stylesheet" />
-<!-- Fonts and icons -->
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+<!-- core css files -->
+<link href="/css/bootstrap.min.css" rel="stylesheet" />
 
-<!-- from header -->
-<script type="text/javascript">
-
-    (function() {
-        'use strict';
-    })();
-
-    //global variable
-    g_contextPath = '<minuet:context/>';
-    g_resourcesPath = '<minuet:contextWithResources/>';
-
-</script>
---%>
+<style>
+    #jb-container {
+        width: 940px;
+        margin: 0px auto;
+        padding: 20px;
+        border: 1px solid #bcbcbc;
+    }
+    #jb-header {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #bcbcbc;
+    }
+    #jb-content {
+        width: 580px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: left;
+        border: 1px solid #bcbcbc;
+    }
+    #jb-sidebar {
+        width: 260px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: right;
+        border: 1px solid #bcbcbc;
+    }
+    #jb-footer {
+        clear: both;
+        padding: 20px;
+        border: 1px solid #bcbcbc;
+    }
+</style>
