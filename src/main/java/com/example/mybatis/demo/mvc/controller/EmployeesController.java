@@ -26,13 +26,19 @@ public class EmployeesController {
     @GetMapping("/single")
     public String employeesSingle() {
         loggerTest("employees-single");
-        return "employees.single-page";
+        return "employees.single";
     }
 
     @GetMapping("/main")
     public String employeesMain() {
         loggerTest("employees-main");
         return "employees.main";
+    }
+
+    @GetMapping("/simple")
+    public String employeesSimple() {
+        loggerTest("employees-simple");
+        return "simple.simple";
     }
 
     @GetMapping("/list/{lastName}")

@@ -24,22 +24,40 @@
         <put-attribute name="content" value="/WEB-INF/view/{1}/{2}/{3}/content.jsp"/>
     </definition>
 
-    <!-- single-page layout -->
-    <definition name="layouts-tiles_single-page" template="/WEB-INF/tiles/layout/single-page/layouts.jsp">
-        <put-attribute name="header" value="/WEB-INF/tiles/layout/single-page/pages/header.jsp"/>
-        <put-attribute name="top" value="/WEB-INF/tiles/layout/single-page/pages/top.jsp"/>
-        <put-attribute name="footer" value="/WEB-INF/tiles/layout/single-page/pages/footer.jsp"/>
+    <!-- single layout -->
+    <definition name="layouts-tiles_single" template="/WEB-INF/tiles/layout/single/layouts.jsp">
+        <put-attribute name="header" value="/WEB-INF/tiles/layout/single/pages/header.jsp"/>
+        <put-attribute name="top" value="/WEB-INF/tiles/layout/single/pages/top.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/tiles/layout/single/pages/footer.jsp"/>
         <put-attribute name="content"/>
     </definition>
 
-    <definition name="*.single-page" extends="layouts-tiles_single-page">
+    <definition name="*.single" extends="layouts-tiles_single">
         <put-attribute name="content" value="/WEB-INF/view/{1}/content.jsp"/>
     </definition>
-    <definition name="*/*.single-page" extends="layouts-tiles_single-page">
+    <definition name="*/*.single" extends="layouts-tiles_single">
         <put-attribute name="content" value="/WEB-INF/view/{1}/{2}/content.jsp"/>
     </definition>
-    <definition name="*/*/*.single-page" extends="layouts-tiles_single-page">
+    <definition name="*/*/*.single" extends="layouts-tiles_single">
         <put-attribute name="content" value="/WEB-INF/view/{1}/{2}/{3}/content.jsp"/>
+    </definition>
+
+    <!-- simple layout -->
+    <definition name="layouts-tiles_simple" template="/WEB-INF/tiles/layout/simple/layouts.jsp">
+        <put-attribute name="header" value="/WEB-INF/tiles/layout/simple/pages/header.jsp"/>
+        <put-attribute name="top" value="/WEB-INF/tiles/layout/simple/pages/top.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/tiles/layout/simple/pages/footer.jsp"/>
+        <put-attribute name="content"/>
+    </definition>
+
+    <definition name="*.simple" extends="layouts-tiles_simple">
+        <put-attribute name="content" value="/WEB-INF/view/{1}.jsp"/>
+    </definition>
+    <definition name="*/*.simple" extends="layouts-tiles_simple">
+        <put-attribute name="content" value="/WEB-INF/view/{1}/{2}.jsp"/>
+    </definition>
+    <definition name="*/*/*.simple" extends="layouts-tiles_simple">
+        <put-attribute name="content" value="/WEB-INF/view/{1}/{2}/{3}.jsp"/>
     </definition>
 
 </tiles-definitions>

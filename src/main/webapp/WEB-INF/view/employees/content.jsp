@@ -4,18 +4,18 @@
 
 <div class="rightcolumn">
     <div class="card">
-        <h2>About Me</h2>
-        <div class="fakeimg" style="height:100px;">Image</div>
-        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+        <h3>Reference XML Properties</h3>
+        <p><spring:eval expression="@application['CONTEXT_PATH']"> </spring:eval>
+    </div>
+    <div class="card">
+        <h3>Reference Properties</h3>
+        <p><spring:eval expression="@config['EMAIL_SERVER']"> </spring:eval>
+        <p><spring:eval expression="@restful['JIRA_DASHBOARD']"> </spring:eval>
+        <p><spring:eval expression="@restful['JIRA_ISSUE']"> </spring:eval>
+        <p><spring:eval expression="@restful['JIRA_ISSUETYPE']"> </spring:eval>
     </div>
     <div class="card">
         <h3>Reference Multi Languages</h3>
         <div class="fakeimg"><p><spring:message code="hello"/></p></div>
-        <div class="fakeimg"><p>Image</p></div>
-        <div class="fakeimg"><p>Image</p></div>
-    </div>
-    <div class="card">
-        <h3>Reference XML Properties</h3>
-        <p><spring:eval expression="@application['CONTEXT_PATH']"> </spring:eval>
     </div>
 </div>
