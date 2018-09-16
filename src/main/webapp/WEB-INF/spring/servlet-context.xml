@@ -68,4 +68,12 @@
     <task:scheduler id="jobScheduler" pool-size="10" />
     <task:annotation-driven scheduler="jobScheduler" />
 
+    <!-- interceptor -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/employees/*" />
+            <bean class="com.example.mybatis.demo.interceptor.EmployeesInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 </beans>
