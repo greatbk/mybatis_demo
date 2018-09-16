@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 @Component
@@ -51,6 +50,18 @@ public class UploadHelper {
         if(file != null && uploadFileInfo != null) {
             File f = new File(uploadFileInfo.getServerPath());
             file.transferTo(f);
+        }
+    }
+
+    public void clear() {
+        File[] files = new File(baseUploadDir).listFiles();
+        long now = System.currentTimeMillis();
+        long aliveTime = 24 * 60 * 60 * 1000; //One day
+        for(File file : files) {
+            if(now - file.lastModified() > aliveTime) {
+                logger.info(String.format("remove old file.. %s", file.getName()));
+                file.delete();
+            }
         }
     }
 }

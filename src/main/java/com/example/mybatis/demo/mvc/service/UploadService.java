@@ -5,6 +5,7 @@ import com.example.mybatis.demo.entity.common.UploadFileInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,14 +19,18 @@ public class UploadService {
     @Autowired
     private UploadHelper uploadHelper;
 
-    public boolean save(MultipartFile file) {
+    public void save(MultipartFile file) {
         try {
             UploadFileInfo uploadFileInfo = uploadHelper.getUploadFileinfo(file);
             uploadHelper.save(file, uploadFileInfo);
-            return true;
         } catch(IOException e) {
             logger.error("save failed!", e);
-            return false;
+            throw new RuntimeException(e);
         }
+    }
+
+    @Scheduled(cron="*/5 * * * * *")
+    public void clear() {
+        uploadHelper.clear();
     }
 }
