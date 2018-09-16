@@ -1,5 +1,7 @@
 package com.example.mybatis.demo.interceptor;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,10 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 
 public class EmployeesInterceptor extends HandlerInterceptorAdapter {
 
+    private static final Logger logger = LoggerFactory.getLogger(EmployeesInterceptor.class);
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        System.out.println("EmployeesInterceptor:preHandle");
+        logger.debug("EmployeesInterceptor:preHandle");
+        logger.debug(request.getRequestURI());
 
         /*
         HttpSession session = request.getSession();
