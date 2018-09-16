@@ -64,7 +64,6 @@
     <util:properties id="restful" location="/WEB-INF/properties/restful.properties" />
 
     <!-- scheduler -->
-    <context:component-scan base-package="com.example.mybatis.demo" />
     <task:scheduler id="jobScheduler" pool-size="10" />
     <task:annotation-driven scheduler="jobScheduler" />
 
