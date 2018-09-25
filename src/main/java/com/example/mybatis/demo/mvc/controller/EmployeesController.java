@@ -1,6 +1,8 @@
 package com.example.mybatis.demo.mvc.controller;
 
 import com.example.mybatis.demo.entity.Employees;
+import com.example.mybatis.demo.exception.AsyncException;
+import com.example.mybatis.demo.exception.PageException;
 import com.example.mybatis.demo.mvc.service.employees.EmployeesService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -25,34 +28,51 @@ public class EmployeesController {
 
     @GetMapping("/single")
     public String employeesSingle() {
-        loggerTest("employees-single");
-        return "employees.single";
+        logger.debug("start employeesSingle");
+
+        try {
+            return "employees.single";
+
+        } catch(Exception e) {
+            throw new PageException(e);
+        }
     }
 
     @GetMapping("/main")
     public String employeesMain() {
-        loggerTest("employees-main");
-        return "employees.main";
+        logger.debug("employeesMain");
+
+        try {
+            return "employees.main";
+
+        } catch(Exception e) {
+            throw new PageException(e);
+        }
     }
 
     @GetMapping("/simple")
     public String employeesSimple() {
-        loggerTest("employees-simple");
-        return "simple.simple";
+        logger.debug("employeesSimple");
+
+        try {
+            return "simple.simple";
+
+        } catch(Exception e) {
+            throw new PageException(e);
+        }
     }
 
     @GetMapping("/list/{lastName}")
+    @ResponseBody
     public ResponseEntity<List<Employees>> employeesList(@PathVariable String lastName) {
-        loggerTest("employeesList");
-        List<Employees> list = employeesService.selectEmployeesList(lastName);
-        return new ResponseEntity<>(list, HttpStatus.OK);
-    }
+        logger.debug("employeesList");
 
-    /**
-     * logger test
-     * @param methodName method_name
-     */
-    private void loggerTest(String methodName) {
-        logger.debug(String.format("EmployeesController:%s", methodName));
+        try {
+            List<Employees> list = employeesService.selectEmployeesList(lastName);
+            return new ResponseEntity<>(list, HttpStatus.OK);
+
+        } catch(Exception e) {
+            throw new AsyncException(e);
+        }
     }
 }

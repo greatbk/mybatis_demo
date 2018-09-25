@@ -9,6 +9,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
 
@@ -19,6 +20,20 @@ public class UploadHelper {
 
     @Value("#{config['BASE_UPLOAD_DIR']}")
     private String baseUploadDir;
+
+    @PostConstruct
+    public void createBaseUploadDir() {
+        logger.debug("start createBaseUploadDir");
+        try {
+            File f = new File(baseUploadDir);
+            if(!f.exists()) {
+                f.mkdirs();
+                logger.debug("create base upload directory");
+            }
+        } catch(Exception e) {
+            logger.error("Failed to create directory");
+        }
+    }
 
     public UploadFileInfo getUploadFileinfo(MultipartFile file) {
         if(file != null) {

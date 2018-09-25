@@ -21,15 +21,6 @@ public class EmployeesServiceImpl implements EmployeesService {
 
     @Override
     public List<Employees> selectEmployeesList(String lastName) {
-        loggerTest("selectEmployeesList");
         return employeesMapper.selectEmployeesList(lastName);
-    }
-
-    /**
-     * logger test
-     * @param methodName method_name
-     */
-    private void loggerTest(String methodName) {
-        logger.debug(String.format("EmployeesServiceImpl:%s", methodName));
     }
 }
