@@ -13,8 +13,11 @@
 </div>
 
 <div style="background-color:#aaa; height:200px; width:100px; float:right;">
-    <div><b>Right Menu</b></div>
-    HTML<br/>
-    PHP<br/>
-    PERL...<br/>
+    <div><b>File info</b></div>
+    Name: <c:out value="${fileInfo.filename}" /><br/>
+    Extname: <c:out value="${fileInfo.extname}" /><br/>
+    Size: <c:out value="${fileInfo.size}" /><br/>
+    <div><b>Other param</b></div>
+    name1: <c:out value="${param.name1}" /><br/>
+    name2: <c:out value="${param.name2}" /><br/>
 </div>

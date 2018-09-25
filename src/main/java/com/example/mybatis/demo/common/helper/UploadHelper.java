@@ -5,6 +5,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -23,7 +24,7 @@ public class UploadHelper {
         if(file != null) {
             UploadFileInfo uploadFileInfo = new UploadFileInfo();
             uploadFileInfo.setFilename(file.getOriginalFilename());
-            uploadFileInfo.setExtName(getExtName(file.getOriginalFilename()));
+            uploadFileInfo.setExtname(getExtName(file.getOriginalFilename()));
             uploadFileInfo.setSize(file.getSize());
             uploadFileInfo.setServerName(getTempFilename());
             uploadFileInfo.setServerPath(String.format("%s/%s", baseUploadDir, uploadFileInfo.getServerName()));
@@ -53,6 +54,12 @@ public class UploadHelper {
         }
     }
 
+    public void save(MultipartFile file) throws IOException {
+        UploadFileInfo uploadFileInfo = getUploadFileinfo(file);
+        save(file, uploadFileInfo);
+    }
+
+    @Scheduled(cron="*/5 * * * * *")
     public void clear() {
         File[] files = new File(baseUploadDir).listFiles();
         long now = System.currentTimeMillis();

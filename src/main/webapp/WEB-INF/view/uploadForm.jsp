@@ -3,7 +3,7 @@
 
 <div style="background-color:#eee; height:auto; width:100%;" >
     <div><b>File Upload Example</b></div>
-    <form action="/upload" method="post" enctype="multipart/form-data">
+    <form action="/upload9" method="post" enctype="multipart/form-data">
         <div>
             <input type="file" name="file">
         </div>

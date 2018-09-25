@@ -3,7 +3,7 @@ package com.example.mybatis.demo.entity.common;
 public class UploadFileInfo {
 
     private String filename;
-    private String extName;
+    private String extname;
     private long size;
 
     private String serverName;
@@ -13,7 +13,7 @@ public class UploadFileInfo {
     public String toString() {
         StringBuilder buf = new StringBuilder();
         buf.append(String.format("filename: [%s]", filename));
-        buf.append(String.format(", extName: [%s]", extName));
+        buf.append(String.format(", extname: [%s]", extname));
         buf.append(String.format(", size: [%d]", size));
         buf.append(String.format(", serverName: [%s]", serverName));
         buf.append(String.format(", serverPath: [%s]", serverPath));
@@ -28,12 +28,12 @@ public class UploadFileInfo {
         this.filename = filename;
     }
 
-    public String getExtName() {
-        return extName;
+    public String getExtname() {
+        return extname;
     }
 
-    public void setExtName(String extName) {
-        this.extName = extName;
+    public void setExtname(String extname) {
+        this.extname = extname;
     }
 
     public long getSize() {
