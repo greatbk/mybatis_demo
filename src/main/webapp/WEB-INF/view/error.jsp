@@ -4,4 +4,5 @@
 
 <div style="background-color:#eee; height:200px; width:350px; float:left;" >
     <div><b>Error Page</b></div>
+    <c:out value="${exception.message}"/><br/>
 </div>
