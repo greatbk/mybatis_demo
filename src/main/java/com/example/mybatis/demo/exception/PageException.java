@@ -1,14 +1,12 @@
 package com.example.mybatis.demo.exception;
 
-public class PageException extends RuntimeException {
-
-    private String message;
+public class PageException extends BaseException {
 
     public PageException(String message) {
-        this.message = message;
+        super(message);
     }
 
     public PageException(Exception e) {
-        this.message = e.getMessage();
+        super(e);
     }
 }
