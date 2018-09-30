@@ -9,7 +9,7 @@
     <definition name="layouts-tiles_main" template="/WEB-INF/tiles/layout/main/layouts.jsp">
         <put-attribute name="header" value="/WEB-INF/tiles/layout/main/pages/header.jsp"/>
         <put-attribute name="top" value="/WEB-INF/tiles/layout/main/pages/top.jsp"/>
-        <put-attribute name="left" value="/WEB-INF/tiles/layout/main/pages/left.jsp"/>
+        <put-attribute name="right" value="/WEB-INF/tiles/layout/main/pages/right.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/tiles/layout/main/pages/footer.jsp"/>
         <put-attribute name="content"/>
     </definition>

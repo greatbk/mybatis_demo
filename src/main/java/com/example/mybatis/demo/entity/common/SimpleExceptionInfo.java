@@ -2,6 +2,8 @@ package com.example.mybatis.demo.entity.common;
 
 public class SimpleExceptionInfo {
 
+    private boolean errorFlag = true;
+
     private String message;
 
     public SimpleExceptionInfo(RuntimeException e) {
@@ -21,5 +23,13 @@ public class SimpleExceptionInfo {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public boolean isErrorFlag() {
+        return errorFlag;
+    }
+
+    public void setErrorFlag(boolean errorFlag) {
+        this.errorFlag = errorFlag;
     }
 }

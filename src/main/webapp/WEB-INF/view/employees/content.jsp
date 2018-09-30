@@ -2,20 +2,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
-<div class="rightcolumn">
+<div class="leftcolumn">
     <div class="card">
         <h3>Reference XML Properties</h3>
-        <p><spring:eval expression="@application['CONTEXT_PATH']"> </spring:eval>
+        <p><spring:eval expression="@application['CONTEXT_PATH']"> </spring:eval></p>
     </div>
     <div class="card">
         <h3>Reference Properties</h3>
-        <p><spring:eval expression="@config['EMAIL_SERVER']"> </spring:eval>
-        <p><spring:eval expression="@restful['JIRA_DASHBOARD']"> </spring:eval>
-        <p><spring:eval expression="@restful['JIRA_ISSUE']"> </spring:eval>
-        <p><spring:eval expression="@restful['JIRA_ISSUETYPE']"> </spring:eval>
+        <p><spring:eval expression="@config['EMAIL_SERVER']"> </spring:eval></p>
+        <p><spring:eval expression="@restful['JIRA_DASHBOARD']"> </spring:eval></p>
+        <p><spring:eval expression="@restful['JIRA_ISSUE']"> </spring:eval></p>
+        <p><spring:eval expression="@restful['JIRA_ISSUETYPE']"> </spring:eval></p>
     </div>
     <div class="card">
         <h3>Reference Multi Languages</h3>
-        <div class="fakeimg"><p><spring:message code="hello"/></p></div>
+        <p><spring:message code="hello"/></p>
     </div>
 </div>

@@ -9,8 +9,8 @@
 <body>
 <tiles:insertAttribute name="top"/>
 <div class="row">
-    <tiles:insertAttribute name="left"/>
     <tiles:insertAttribute name="content"/>
+    <tiles:insertAttribute name="right"/>
 </div>
 <tiles:insertAttribute name="footer"/>
 </body>
