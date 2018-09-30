@@ -12,11 +12,17 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 @Component
 public class UploadHelper {
 
     private static final Logger logger = LoggerFactory.getLogger(UploadHelper.class);
+
+    public static final String ALLOW_EXTENSION = "jpg,png,pdf";
+
+    public static final long MAX_SIZE = 3 * 1024 * 1024; //3MB
 
     @Value("#{config['BASE_UPLOAD_DIR']}")
     private String baseUploadDir;
@@ -39,7 +45,7 @@ public class UploadHelper {
         if(file != null) {
             UploadFileInfo uploadFileInfo = new UploadFileInfo();
             uploadFileInfo.setFilename(file.getOriginalFilename());
-            uploadFileInfo.setExtname(getExtName(file.getOriginalFilename()));
+            uploadFileInfo.setExtname(getExtension(file.getOriginalFilename()));
             uploadFileInfo.setSize(file.getSize());
             uploadFileInfo.setServerName(getTempFilename());
             uploadFileInfo.setServerPath(String.format("%s/%s", baseUploadDir, uploadFileInfo.getServerName()));
@@ -48,7 +54,7 @@ public class UploadHelper {
         return null;
     }
 
-    public String getExtName(String filename) {
+    public String getExtension(String filename) {
         if(filename != null) {
             int index = filename.lastIndexOf(".");
             if(index >= 0) {
@@ -85,5 +91,15 @@ public class UploadHelper {
                 file.delete();
             }
         }
+    }
+
+    public boolean checkExtension(UploadFileInfo uploadFileInfo) {
+        if(uploadFileInfo != null && uploadFileInfo.getExtname() != null) {
+            List<String> allows = Arrays.asList(ALLOW_EXTENSION.split(","));
+            if(allows.contains(uploadFileInfo.getExtname().toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
     }
 }

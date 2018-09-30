@@ -1,6 +1,7 @@
 package com.example.mybatis.demo.mvc.controller;
 
 import com.example.mybatis.demo.common.helper.UploadHelper;
+import com.example.mybatis.demo.entity.common.UploadFileInfo;
 import com.example.mybatis.demo.exception.PageException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,11 +36,23 @@ public class UploadController {
     public String upload9(@RequestParam("file") MultipartFile file, @RequestParam Map<String, String> param, Model model) {
         logger.debug("start upload9");
 
+        UploadFileInfo uploadFileInfo = uploadHelper.getUploadFileinfo(file);
+        if(file != null) {
+            if(uploadHelper.checkExtension(uploadFileInfo)) {
+                //TODO use multi-language message
+                throw new PageException("");
+            }
+            if(uploadFileInfo.getSize() > UploadHelper.MAX_SIZE) {
+                //TODO use multi-language message
+                throw new PageException("");
+            }
+        }
+
         try {
             if(file != null) {
                 uploadHelper.save(file);
             }
-            model.addAttribute("fileInfo", uploadHelper.getUploadFileinfo(file));
+            model.addAttribute("fileInfo", uploadFileInfo);
             model.addAttribute("param", param);
             return "upload.simple";
 
@@ -49,7 +62,7 @@ public class UploadController {
     }
 
     /**
-     * If you encounter errors when uploading, try the following:
+     * If you encounter errors when uploading with upload9, try the following:
      */
     @PostMapping("upload8")
     public String upload8(@RequestParam MultipartHttpServletRequest request, @RequestParam Map<String, String> param, Model model) {
