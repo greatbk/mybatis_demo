@@ -64,7 +64,7 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/employees/*" />
-            <bean class="com.example.mybatis.demo.interceptor.EmployeesInterceptor" />
+            <bean class="com.example.mybatis.demo.interceptor.SimpleInterceptor" />
         </mvc:interceptor>
     </mvc:interceptors>
 

@@ -34,7 +34,7 @@ public class UploadController {
 
     @GetMapping("uploadForm")
     public String uploadForm() {
-        return "uploadForm.simple";
+        return "upload/uploadForm.simple";
     }
 
     /**
@@ -62,7 +62,7 @@ public class UploadController {
             }
             model.addAttribute("fileInfo", uploadFileInfo);
             model.addAttribute("param", param);
-            return "upload.simple";
+            return "upload/upload.simple";
 
         } catch(Exception e) {
             throw new PageException(e);
@@ -82,7 +82,7 @@ public class UploadController {
             }
             model.addAttribute("fileInfo", uploadHelper.getUploadFileinfo(request.getFile("file")));
             model.addAttribute("param", param);
-            return "upload.simple";
+            return "upload/upload.simple";
 
         } catch(Exception e) {
             throw new PageException(e);

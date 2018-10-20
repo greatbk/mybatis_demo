@@ -20,7 +20,6 @@
 <ol>
     <li><a href="/kr/locale">koean</a></li>
     <li><a href="/us/locale">america</a></li>
-    <li><a href="/jp/locale">japan</a></li>
 </ol>
 </body>
 </html>
