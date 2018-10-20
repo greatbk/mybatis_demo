@@ -1,11 +1,13 @@
 package com.example.mybatis.demo.mvc.controller;
 
+import com.example.mybatis.demo.common.helper.LocaleHelper;
 import com.example.mybatis.demo.common.helper.UploadHelper;
 import com.example.mybatis.demo.entity.common.UploadFileInfo;
 import com.example.mybatis.demo.exception.PageException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +26,12 @@ public class UploadController {
     @Autowired
     private UploadHelper uploadHelper;
 
+    @Autowired
+    private MessageSource messageSource;
+
+    @Autowired
+    private LocaleHelper localeHelper;
+
     @GetMapping("uploadForm")
     public String uploadForm() {
         return "uploadForm.simple";
@@ -39,12 +47,12 @@ public class UploadController {
         UploadFileInfo uploadFileInfo = uploadHelper.getUploadFileinfo(file);
         if(file != null) {
             if(uploadHelper.checkExtension(uploadFileInfo)) {
-                //TODO use multi-language message
-                throw new PageException("");
+                /*This is an unacceptable extension.*/
+                throw new PageException(messageSource.getMessage("common.error.unacceptExtension", null, localeHelper.getSessionLocale()));
             }
             if(uploadFileInfo.getSize() > UploadHelper.MAX_SIZE) {
-                //TODO use multi-language message
-                throw new PageException("");
+                /*The maximum size has been exceeded. Can not upload more than 3MB.*/
+                throw new PageException(messageSource.getMessage("common.error.maxsizeExceed", null, localeHelper.getSessionLocale()));
             }
         }
 

@@ -1,5 +1,6 @@
 package com.example.mybatis.demo.common.helper;
 
+import com.example.mybatis.demo.common.Util;
 import org.springframework.stereotype.Component;
 
 import java.util.Locale;
@@ -9,18 +10,20 @@ public class LocaleHelper {
 
     public Locale findLocale(String countryCode) {
         if(countryCode == null) {
-            return Locale.US;
+            return Locale.ENGLISH;
         }
 
         switch(countryCode.toUpperCase()) {
             case "KR":
                 return Locale.KOREA;
-            case "US":
-                return Locale.US;
-            case "JP":
-                return Locale.JAPAN;
+            case "EN":
+                return Locale.ENGLISH;
             default:
-                return Locale.US;
+                return Locale.ENGLISH;
         }
+    }
+
+    public Locale getSessionLocale() {
+        return (Locale)(Util.getSession().getAttribute("locale"));
     }
 }

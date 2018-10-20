@@ -47,6 +47,7 @@
     <!-- multi language -->
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basenames" value="locale/messages"/>
+        <property name="defaultEncoding" value="UTF-8"/>
     </bean>
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
 

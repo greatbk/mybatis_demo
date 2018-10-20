@@ -5,7 +5,7 @@
 <div style="background-color:#eee; height:auto; width:auto; padding-left:20px;" >
     <div><b>Main Menu</b></div>
     <p>
-        <spring:message code="hello"/><br/>
+        <spring:message code="common.message.hello"/><br/>
         <spring:eval expression="@application['CONTEXT_PATH']"> </spring:eval><br/>
         <spring:eval expression="@config['EMAIL_SERVER']"> </spring:eval><br/>
         <spring:eval expression="@restful['JIRA_DASHBOARD']"> </spring:eval><br/>

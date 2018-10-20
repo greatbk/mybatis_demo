@@ -5,7 +5,7 @@
 <div style="background-color:#eee; height:auto; width:auto; padding-left:20px;" >
     <div><b>Main Menu</b></div>
     <p>
-        <spring:message code="hello"/><br/>
+        <spring:message code="common.message.hello"/><br/>
         <a href="/other">other</a><br/>
     </p>
 </div>

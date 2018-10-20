@@ -21,7 +21,7 @@
     <div class="card">
         <h3>Reference Multi Languages</h3>
         <p>
-            <spring:message code="hello"/><br/>
+            <spring:message code="common.message.hello"/><br/>
         </p>
     </div>
 </div>
